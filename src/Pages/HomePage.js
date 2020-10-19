@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useMutation } from "react-query";
 import DropImage from "../components/DropImage";
 import ImageGrid from "../components/ImageGrid";
+import Pagination from "../components/Pagination";
 import Search from "../components/Search";
 import { baseUrl } from "../config.json";
 
@@ -33,9 +34,7 @@ const HomePage = () => {
     };
     searchImage();
   }, [uploadFile, fileType, mutate, page]);
-  {
-    console.log(data && data.files[0], "sss");
-  }
+
   useEffect(() => {
     console.log(searchMode, searchTerm);
   }, [searchMode, searchTerm]);
@@ -43,7 +42,10 @@ const HomePage = () => {
     <div className="bg-black h-full min-h-screen flex items-center flex-col">
       <Search setsearchMode={setsearchMode} setSearchTerm={setSearchTerm} />
       <DropImage setfileDetails={setfileDetails} />
-      <ImageGrid />
+      {isLoading && <div className="text-gray-400"> LOADING.........</div>}
+      {console.log(isLoading, "loading")}
+      <ImageGrid data={data} />
+      <Pagination tPages={data && data.total_pages} setPage={setPage} />
     </div>
   );
 };
