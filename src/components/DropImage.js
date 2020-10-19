@@ -1,17 +1,35 @@
-import React, { useCallback, useState } from "react";
+import { fireEvent } from "@testing-library/react";
+import React, { useCallback, useEffect, useState } from "react";
 import { useDropzone } from "react-dropzone";
 
-const DropImage = () => {
-  const [uploadFile, setUploadFile] = useState(null);
+const DropImage = ({ setfileDetails }) => {
+  const [uploadFile, setUploadFile] = useState();
+  const [fileType, setfileType] = useState();
   const [imgURL, setimgURL] = useState();
 
   const onDrop = useCallback((acceptedFiles) => {
-    console.log(acceptedFiles);
     const file = acceptedFiles[0];
-    setUploadFile(file);
-    console.log();
-    setimgURL(getFileURL(file));
+    setUploadFile((prev) => {
+      setfileType();
+      return file;
+    });
   }, []);
+
+  useEffect(() => {
+    if (uploadFile) {
+      const [fileURL, _fileType] = getFileDetail(uploadFile);
+      setimgURL(fileURL);
+      setfileType(_fileType);
+    }
+  }, [uploadFile]);
+
+  useEffect(() => {
+    if (fileType) {
+      console.log(fileType, uploadFile);
+      setfileDetails([fileType, uploadFile]);
+    }
+  }, [fileType, setfileDetails, uploadFile]);
+
   const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop });
 
   return (
@@ -39,19 +57,26 @@ const DropImage = () => {
 
 export default DropImage;
 
-const getFileURL = (file) => {
+const getFileDetail = (file) => {
   const extension = file.name.split(".").pop();
+  let fileURL = "";
+  let _fileType = "";
   const imgType = ["png", "jpg", "jpeg"];
   const pdfType = ["pdf"];
   const audioType = ["mp3", "wav"];
 
   if (imgType.includes(extension)) {
-    return URL.createObjectURL(file);
+    fileURL = URL.createObjectURL(file);
+    _fileType = "img";
   } else if (pdfType.includes(extension)) {
-    return "/pdf.png";
+    fileURL = "/pdf.png";
+    _fileType = "pdf";
   } else if (audioType.includes(extension)) {
-    return "/audio.png";
+    fileURL = "/audio.png";
+    _fileType = "audio";
   } else {
-    return "/unknown.png";
+    fileURL = "/unknown.png";
+    _fileType = "unknown";
   }
+  return [fileURL, _fileType];
 };
