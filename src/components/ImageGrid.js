@@ -3,17 +3,16 @@ import React from "react";
 const ImageGrid = ({ data }) => {
   return (
     <div className="grid gap-4 grid-cols-1 sm:grid-cols-3  max-w-5xl pb-4 mx-4 mb-10">
-      {data &&
-        data.files[0] &&
-        data.files.map((elem, idx) => {
-          return (
-            <Image
-              name={data.document[idx]}
-              src={`data:image/png;base64, ${elem}`}
-              score={data.scores[idx]}
-            />
-          );
-        })}
+      {data?.files?.map((elem, idx) => {
+        return (
+          <Image
+            key={idx}
+            name={data.document[idx]}
+            src={`data:image/png;base64, ${elem}`}
+            score={data.scores[idx]}
+          />
+        );
+      })}
     </div>
   );
 };

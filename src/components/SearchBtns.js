@@ -33,7 +33,7 @@ const SearchBtns = ({ setsearchMode }) => {
 
 export default SearchBtns;
 
-export const Btn = ({ children, selected, ...props }) => {
+const Btn = ({ children, selected, ...props }) => {
   const selectedStyle = "bg-indigo-500 border-transparent text-white";
   return (
     <button

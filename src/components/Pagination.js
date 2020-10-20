@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-const Pagination = ({ tPages, setPage }) => {
+const Pagination = ({ tPages, setPage, superStateRef }) => {
   const [currentPg, setcurrentPg] = useState(1);
   useEffect(() => {
     setPage(currentPg - 1);
@@ -10,10 +10,16 @@ const Pagination = ({ tPages, setPage }) => {
       {
         <div className="bg-gray-900 px-4 py-3 flex items-center justify-between border-t border-gray-900 sm:px-6 rounded-t-lg">
           <div className="flex-1 flex justify-between sm:hidden">
-            <button className="relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm leading-5 font-medium rounded-md text-gray-700 bg-white hover:text-gray-500 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 active:bg-gray-100 active:text-gray-700 transition ease-in-out duration-150">
+            <button
+              onClick={() => {}}
+              className="relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm leading-5 font-medium rounded-md text-gray-700 bg-white hover:text-gray-500 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 active:bg-gray-100 active:text-gray-700 transition ease-in-out duration-150"
+            >
               Previous
             </button>
-            <button className="ml-3 relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm leading-5 font-medium rounded-md text-gray-700 bg-white hover:text-gray-500 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 active:bg-gray-100 active:text-gray-700 transition ease-in-out duration-150">
+            <button
+              onClick={() => {}}
+              className="ml-3 relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm leading-5 font-medium rounded-md text-gray-700 bg-white hover:text-gray-500 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 active:bg-gray-100 active:text-gray-700 transition ease-in-out duration-150"
+            >
               Next
             </button>
           </div>
@@ -30,9 +36,12 @@ const Pagination = ({ tPages, setPage }) => {
             <div>
               <nav className="relative z-0 inline-flex shadow-sm">
                 <PrevBtn
-                  onClick={() =>
-                    currentPg > 1 && setcurrentPg((prevState) => prevState - 1)
-                  }
+                  onClick={() => {
+                    currentPg > 1 && setcurrentPg((prevState) => prevState - 1);
+                    if (superStateRef) {
+                      superStateRef.current.click();
+                    }
+                  }}
                 />
                 {/* {Array(3)
                 .fill(0)
@@ -50,7 +59,15 @@ const Pagination = ({ tPages, setPage }) => {
               <PageNum num={"2"} />
               <PageNum num={"3"} />
               <PageNum num={"4"} /> */}
-                <NextBtn onClick={() => setcurrentPg(currentPg + 1)} />
+                <NextBtn
+                  onClick={() => {
+                    setcurrentPg(currentPg + 1);
+                    console.log("in next 2", superStateRef);
+                    if (superStateRef) {
+                      superStateRef.current.click();
+                    }
+                  }}
+                />
               </nav>
             </div>
           </div>
@@ -59,7 +76,6 @@ const Pagination = ({ tPages, setPage }) => {
     </div>
   );
 };
-
 export default Pagination;
 
 const PrevBtn = (props) => {
