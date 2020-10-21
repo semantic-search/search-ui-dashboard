@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-const Pagination = ({ tPages, setPage, superStateRef }) => {
+const Pagination = ({ tPages, setPage }) => {
   const [currentPg, setcurrentPg] = useState(1);
   useEffect(() => {
     setPage(currentPg - 1);
@@ -7,7 +7,7 @@ const Pagination = ({ tPages, setPage, superStateRef }) => {
   //   const totalPgs = tPages % 10 === 0 ? tPages / 10 : tPages / 10 + 1;
   return (
     <div className="fixed inset-x-0 bottom-0 flex justify-center">
-      {
+      {tPages && (
         <div className="bg-gray-900 px-4 py-3 flex items-center justify-between border-t border-gray-900 sm:px-6 rounded-t-lg">
           <div className="flex-1 flex justify-between sm:hidden">
             <button
@@ -38,9 +38,6 @@ const Pagination = ({ tPages, setPage, superStateRef }) => {
                 <PrevBtn
                   onClick={() => {
                     currentPg > 1 && setcurrentPg((prevState) => prevState - 1);
-                    if (superStateRef) {
-                      superStateRef.current.click();
-                    }
                   }}
                 />
                 {/* {Array(3)
@@ -62,17 +59,13 @@ const Pagination = ({ tPages, setPage, superStateRef }) => {
                 <NextBtn
                   onClick={() => {
                     setcurrentPg(currentPg + 1);
-                    console.log("in next 2", superStateRef);
-                    if (superStateRef) {
-                      superStateRef.current.click();
-                    }
                   }}
                 />
               </nav>
             </div>
           </div>
         </div>
-      }
+      )}
     </div>
   );
 };
