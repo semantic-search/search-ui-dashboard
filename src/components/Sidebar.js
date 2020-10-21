@@ -1,6 +1,7 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import { RouteName } from "../Routes";
+import { AiOutlineCloseCircle } from "react-icons/ai";
 
 const Sidebar = ({ onClose }) => {
   const onCloseHandle = () => {
@@ -9,10 +10,10 @@ const Sidebar = ({ onClose }) => {
   return (
     <div className="text-gray-300 ">
       <div
-        className=" cursor-pointer px-3 py-3 text-lg"
+        className=" cursor-pointer px-3 py-3"
         onClick={() => onCloseHandle()}
       >
-        X
+     <AiOutlineCloseCircle className="text-2xl"/> 
       </div>
       <Element route={RouteName.dashboard}>Dashboard</Element>
       <Element route={RouteName.imageSearch}>Image Search</Element>

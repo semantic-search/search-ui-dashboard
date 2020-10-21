@@ -1,0 +1,196 @@
+{
+  "Image": {
+    "Image_Captioning": [
+      {
+        "Container": "DENSE_CAP",
+        "Processing_File": "No File",
+        "Status": "Not Started"
+      },
+      {
+        "Container": "IMAGE_CAPTIONING",
+        "Processing_File": "No File",
+        "Status": "Not Started"
+      },
+      {
+        "Container": "SELF_CRITICAL_PYTORCH",
+        "Processing_File": "No File",
+        "Status": "Not Started"
+      },
+      {
+        "Container": "NEURAL_TALK_2",
+        "Processing_File": "No File",
+        "Status": "Not Started"
+      },
+      {
+        "Container": "IM2TXT",
+        "Processing_File": "No File",
+        "Status": "Not Started"
+      }
+    ],
+    "Ocr": [
+      {
+        "Container": "KERAS_TESSER_OCR",
+        "Processing_File": "No File",
+        "Status": "Not Started"
+      },
+      {
+        "Container": "EASY_OCR",
+        "Processing_File": "No File",
+        "Status": "Not Started"
+      }
+    ],
+    "Object_Detection": [
+      {
+        "Container": "PP_YOLO",
+        "Processing_File": "No File",
+        "Status": "Not Started"
+      },
+      {
+        "Container": "YOLO_V4",
+        "Processing_File": "No File",
+        "Status": "Not Started"
+      },
+      {
+        "Container": "YOLO_V4_VOC",
+        "Processing_File": "No File",
+        "Status": "Not Started"
+      },
+      {
+        "Container": "MASK_RCNN_SENET",
+        "Processing_File": "No File",
+        "Status": "Not Started"
+      },
+      {
+        "Container": "OPEN_IMAGES_MODEL",
+        "Processing_File": "No File",
+        "Status": "Not Started"
+      },
+      {
+        "Container": "COCO_MODEL",
+        "Processing_File": "No File",
+        "Status": "Not Started"
+      },
+      {
+        "Container": "RETINA_NET_MODEL",
+        "Processing_File": "No File",
+        "Status": "Not Started"
+      },
+      {
+        "Container": "PP_YOLO",
+        "Processing_File": "No File",
+        "Status": "Not Started"
+      },
+      {
+        "Container": "YOLO_V4",
+        "Processing_File": "No File",
+        "Status": "Not Started"
+      },
+      {
+        "Container": "YOLO_V4_VOC",
+        "Processing_File": "No File",
+        "Status": "Not Started"
+      },
+      {
+        "Container": "MASK_RCNN_SENET",
+        "Processing_File": "No File",
+        "Status": "Not Started"
+      },
+      {
+        "Container": "OPEN_IMAGES_MODEL",
+        "Processing_File": "No File",
+        "Status": "Not Started"
+      },
+      {
+        "Container": "COCO_MODEL",
+        "Processing_File": "No File",
+        "Status": "Not Started"
+      },
+      {
+        "Container": "RETINA_NET_MODEL",
+        "Processing_File": "No File",
+        "Status": "Not Started"
+      }
+    ],
+    "Scene_Recognition": [
+      {
+        "Container": "PLACES_365_TORCH",
+        "Processing_File": "No File",
+        "Status": "Not Started"
+      },
+      {
+        "Container": "PLACES_365_KERAS_HYBRID",
+        "Processing_File": "No File",
+        "Status": "Not Started"
+      },
+      {
+        "Container": "PLACES_365_KERAS_BASE",
+        "Processing_File": "No File",
+        "Status": "Not Started"
+      },
+      {
+        "Container": "IBM_MAX_SCENE_CLASSIFIER",
+        "Processing_File": "No File",
+        "Status": "Not Started"
+      }
+    ],
+    "Image_Recognition": [
+      {
+        "Container": "IMAGE_NET_KERAS_MODELS",
+        "Processing_File": "No File",
+        "Status": "Not Started"
+      },
+      {
+        "Container": "TENCENT_ML_IMAGES_MODEL",
+        "Processing_File": "No File",
+        "Status": "Not Started"
+      }
+    ],
+    "Image_Search": [
+      {
+        "Container": "VGG16_MODEL",
+        "Processing_File": "No File",
+        "Status": "Not Started"
+      }
+    ],
+    "Face_Recognition": [
+      {
+        "Container": "DLIB",
+        "Processing_File": "No File",
+        "Status": "Not Started"
+      }
+    ]
+  },
+  "audio": {
+    "Sound_Classification": [
+      {
+        "Container": "MAX_AUDIO_CLASSIFIER",
+        "Processing_File": "No File",
+        "Status": "Not Started"
+      }
+    ],
+    "Audio_Fingerprinting": [
+      {
+        "Container": "DEJAVU",
+        "Processing_File": "No File",
+        "Status": "Not Started"
+      }
+    ],
+    "Speech_To_Text": [
+      {
+        "Container": "JASPER",
+        "Processing_File": "No File",
+        "Status": "Not Started"
+      },
+      {
+        "Container": "QUARTZNET",
+        "Processing_File": "No File",
+        "Status": "Not Started"
+      },
+      {
+        "Container": "DEEP_SPEECH",
+        "Processing_File": "No File",
+        "Status": "Not Started"
+      }
+    ]
+  }
+}
