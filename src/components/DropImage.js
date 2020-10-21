@@ -81,7 +81,7 @@ const DropImage = React.forwardRef(
                 e.stopPropagation();
                 console.log("api for face");
                 // superRef = faceSearchRef;
-                // setsuperRef(faceSearchRef)
+                setsuperStateRef(faceSearchRef)
               }}
             >
               Face Search

@@ -11,7 +11,6 @@ const HomePage = React.forwardRef(() => {
   const [searchMode, setsearchMode] = useState(["ts"]);
   const [[fileType, uploadFile], setfileDetails] = useState([]);
   const [page, setPage] = useState();
-  const superRef = useRef();
   const [superStateRef, setsuperStateRef] = useState();
 
   const [
@@ -59,7 +58,6 @@ const HomePage = React.forwardRef(() => {
         call_imgSearchAPI={call_imgSearchAPI}
         page={page}
         // superRef={superRef}
-        ref={superRef}
         setsuperStateRef={setsuperStateRef}
       />
       {isLoading && <div className="text-gray-400"> LOADING.........</div>}
@@ -69,7 +67,6 @@ const HomePage = React.forwardRef(() => {
         tPages={data && data.total_pages}
         superStateRef={superStateRef}
         setPage={setPage}
-        ref={superRef}
       />
     </div>
   );
