@@ -2,7 +2,12 @@ import React from "react";
 
 const ImageGrid = ({ data }) => {
   return (
-    <div className="grid gap-4 grid-cols-1 sm:grid-cols-3  max-w-5xl pb-4 mx-4 mb-10">
+    <div className="grid gap-4 grid-cols-1 sm:grid-cols-3 mt-8 max-w-5xl pb-4 mx-4 mb-10">
+      {/* <Image
+        name="file name"
+        src="https://www.nme.com/wp-content/uploads/2016/12/POTY_Pikachu_3.jpg"
+        score="11"
+      /> */}
       {data?.files?.map((elem, idx) => {
         return (
           <Image

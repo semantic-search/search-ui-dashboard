@@ -30,7 +30,7 @@ const TableSection = ({ Title, TData }) => {
               return (
                 <tr
                   key={idx}
-                  className={val["Status"] === "Complete" && `Complete`}
+                  className={val["Status"] === "Complete" ? `Complete` : null}
                 >
                   <td>{val["Container"]}</td>
                   <td>{val["Processing_File"]}</td>

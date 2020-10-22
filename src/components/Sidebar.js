@@ -18,6 +18,8 @@ const Sidebar = ({ onClose }) => {
       <Element route={RouteName.dashboard}>Dashboard</Element>
       <Element route={RouteName.imageSearch}>Image Search</Element>
       <Element route={RouteName.faceSearch}>Face Search</Element>
+      <Element route={RouteName.registerFace}>Register Face</Element>
+      <Element route={RouteName.personSearch}>Person Search</Element>
       <Element route={RouteName.audioSearch}>Audio Search</Element>
       <Element route={RouteName.typesense}>Text Search Typesense</Element>
       <Element route={RouteName.elasticsearch}>

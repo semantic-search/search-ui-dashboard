@@ -10,10 +10,10 @@ const FaceSearch = () => {
   const [[fileType, uploadFile], setfileDetails] = useState([]);
   const [page, setPage] = useState(0);
 
-  const [mutate, { isLoading, data }] = useMutation(({ uploadFile, page }) => {
+  const [mutate, { isLoading, data }] = useMutation(({ uploadFile}) => {
     const formData = new FormData();
     formData.append("file", uploadFile);
-    return fetch(baseUrl + `face-search/?skip=${page}`, {
+    return fetch(baseUrl + `face_search`, {
       method: "POST",
       body: formData,
     })

@@ -6,6 +6,8 @@ import Dashboard from "./Pages/Dashboard";
 import ElasticSearch from "./Pages/ElasticSearch";
 import FaceSearch from "./Pages/FaceSearch";
 import ImageSearch from "./Pages/ImageSearch";
+import PersonSearch from "./Pages/PersonSearch";
+import RegisterFace from "./Pages/RegisterFace";
 import Typesense from "./Pages/Typesense";
 
 const Routes = () => {
@@ -13,6 +15,8 @@ const Routes = () => {
     <BrowserRouter>
       <Switch>
         <MainLayout path={RouteName.faceSearch} component={FaceSearch} />
+        <MainLayout path={RouteName.registerFace} component={RegisterFace} />
+        <MainLayout path={RouteName.personSearch} component={PersonSearch} />
         <MainLayout path={RouteName.imageSearch} component={ImageSearch} />
         <MainLayout path={RouteName.audioSearch} component={AudioSearch} />
         <MainLayout path={RouteName.typesense} component={Typesense} />
@@ -27,6 +31,8 @@ export default Routes;
 
 export const RouteName = {
   faceSearch: "/face-search",
+  registerFace: "/register-face",
+  personSearch: "/person-search",
   imageSearch: "/image-search",
   audioSearch: "/audio-search",
   elasticsearch: "/elasticsearch",

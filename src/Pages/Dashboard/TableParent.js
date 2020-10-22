@@ -21,6 +21,7 @@ function TableParent(props) {
           aria-label="dot"
           style={{
             paddingRight: "1rem",
+            fontSize: "medium",
           }}
         >
           ⚫

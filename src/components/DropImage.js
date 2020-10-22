@@ -48,7 +48,7 @@ const DropImage = ({ setfileDetails }) => {
         ) : (
           <div>
             <span className="text-indigo-600 ">Select a file</span>{" "}
-            <span>or drag and drop to search it !!</span>
+            <span>or drag and drop </span>
           </div>
         )}
       </div>
