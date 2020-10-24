@@ -21,7 +21,7 @@ export const MainLayout = ({ component: Component, ...rest }) => {
           <div
             className={`${handleSidebar(
               toggleSidebar
-            )} absolute w-64  top-0 h-screen shadow-md bg-gray-900 z-50 transition-all duration-200 ease-out`}
+            )} absolute w-64 overflow-y-scroll  top-0 h-screen shadow-md bg-gray-900 z-50 transition-all duration-200 ease-out`}
           >
             <Sidebar onClose={() => onCloseHandler()} />
           </div>

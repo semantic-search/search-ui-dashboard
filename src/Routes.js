@@ -5,10 +5,12 @@ import AudioSearch from "./Pages/AudioSearch";
 import Dashboard from "./Pages/Dashboard";
 import ElasticSearch from "./Pages/ElasticSearch";
 import FaceSearch from "./Pages/FaceSearch";
+import FileIndexing from "./Pages/FileIndexing";
 import ImageSearch from "./Pages/ImageSearch";
 import PersonSearch from "./Pages/PersonSearch";
 import RegisterFace from "./Pages/RegisterFace";
 import Typesense from "./Pages/Typesense";
+import WebIndexing from "./Pages/WebIndexing";
 
 const Routes = () => {
   return (
@@ -21,6 +23,8 @@ const Routes = () => {
         <MainLayout path={RouteName.audioSearch} component={AudioSearch} />
         <MainLayout path={RouteName.typesense} component={Typesense} />
         <MainLayout path={RouteName.elasticsearch} component={ElasticSearch} />
+        <MainLayout path={RouteName.webIndex} component={WebIndexing} />
+        <MainLayout path={RouteName.indexFile} component={FileIndexing} />
         <MainLayout path={RouteName.dashboard} component={Dashboard} />
       </Switch>
     </BrowserRouter>
@@ -37,5 +41,7 @@ export const RouteName = {
   audioSearch: "/audio-search",
   elasticsearch: "/elasticsearch",
   typesense: "/typesense",
+  indexFile: "/indexFile",
+  webIndex: "/webIndex",
   dashboard: "/",
 };

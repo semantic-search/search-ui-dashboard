@@ -13,7 +13,7 @@ const Sidebar = ({ onClose }) => {
         className=" cursor-pointer px-3 py-3"
         onClick={() => onCloseHandle()}
       >
-     <AiOutlineCloseCircle className="text-2xl"/> 
+        <AiOutlineCloseCircle className="text-2xl" />
       </div>
       <Element route={RouteName.dashboard}>Dashboard</Element>
       <Element route={RouteName.imageSearch}>Image Search</Element>
@@ -25,6 +25,8 @@ const Sidebar = ({ onClose }) => {
       <Element route={RouteName.elasticsearch}>
         Text Search Elasticsearch
       </Element>
+      <Element route={RouteName.indexFile}>Index File</Element>
+      <Element route={RouteName.webIndex}>Index Websites</Element>
     </div>
   );
 };

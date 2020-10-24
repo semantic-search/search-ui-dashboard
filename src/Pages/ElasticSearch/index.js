@@ -12,15 +12,17 @@ const ElasticSearch = () => {
   const [searchTerm, setSearchTerm] = useState("");
 
   const [mutate, { isLoading, isError, isSuccess, data, error }] = useMutation(
-    ({ uploadFile, page }) => {
-      return fetch(baseUrl + `ts-search/?term=${searchTerm}&skip=${page}`)
+    ({ searchTerm }) => {
+      return fetch(baseUrl + `elasticsearch/${searchTerm}`)
         .then((res) => res.json())
         .catch((err) => console.log(err));
     }
   );
   useEffect(() => {
     console.log(searchTerm);
-    mutate();
+    if (searchTerm) {
+      mutate({ searchTerm });
+    }
   }, [mutate, searchTerm]);
 
   return (
