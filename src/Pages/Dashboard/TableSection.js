@@ -21,8 +21,9 @@ const TableSection = ({ Title, TData }) => {
           <thead>
             <tr>
               <th>Container</th>
-              <th>Processing File</th>
+              <th>Last Processed File</th>
               <th>Status</th>
+              <th>Files Remaining</th>
             </tr>
           </thead>
           <tbody>
@@ -35,6 +36,7 @@ const TableSection = ({ Title, TData }) => {
                   <td>{val["Container"]}</td>
                   <td>{val["Processing_File"]}</td>
                   <td>{val["Status"]}</td>
+                  <td>{val["Remaining Files"]}</td>
                 </tr>
               );
             })}
