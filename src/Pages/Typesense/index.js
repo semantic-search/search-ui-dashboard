@@ -6,6 +6,7 @@ import ImageGrid from "../../components/ImageGrid";
 import Pagination from "../../components/Pagination";
 import Search from "../../components/Search";
 import { baseUrl } from "../../config.json";
+import Results from "./Results";
 
 const Typesense = () => {
   //   const [page, setPage] = useState(0);
@@ -29,9 +30,9 @@ const Typesense = () => {
     <div className="bg-black h-full min-h-screen flex items-center flex-col">
       <Heading title={"Typesense Search"} />
       <Search setSearchTerm={setSearchTerm} />
-      {/* {isLoading && <div className="text-gray-400"> LOADING.........</div>}
-      {console.log(isLoading, "loading")} */}
-      {/* <ImageGrid data={data} /> */}
+      {isError && <div className="text-red-500"> ERROR </div>}
+      {isLoading && <div className="text-gray-400"> LOADING.........</div>}
+      <Results data={data}/>
       {/* <Pagination tPages={data && data.total_pages} setPage={setPage} /> */}
     </div>
   );
