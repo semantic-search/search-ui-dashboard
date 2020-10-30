@@ -5,7 +5,7 @@ import Heading from "../../components/Heading";
 import ImageGrid from "../../components/ImageGrid";
 import Pagination from "../../components/Pagination";
 import Search from "../../components/Search";
-import { baseUrl } from "../../config.json";
+import { typesense } from "../../config.json";
 import Results from "./Results";
 
 const Typesense = () => {
@@ -14,7 +14,7 @@ const Typesense = () => {
 
   const [mutate, { isLoading, isError, isSuccess, data, error }] = useMutation(
     ({ searchTerm }) => {
-      return fetch(baseUrl + `typesense/${searchTerm}`)
+      return fetch(typesense + `typesense/${searchTerm}`)
         .then((res) => res.json())
         .catch((err) => console.log(err));
     }

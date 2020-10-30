@@ -2,7 +2,7 @@ import React, { useCallback, useEffect, useState } from "react";
 import { useMutation } from "react-query";
 import DropImage from "../../components/DropImage";
 import Heading from "../../components/Heading";
-import { baseUrl } from "../../config.json";
+import { faceRegister } from "../../config.json";
 
 const RegisterFace = () => {
   const [[fileType, uploadFile], setfileDetails] = useState([]);
@@ -12,7 +12,7 @@ const RegisterFace = () => {
     const formData = new FormData();
     formData.append("file", uploadFile);
     formData.append("user_name", name);
-    return fetch(baseUrl + `register`, {
+    return fetch(faceRegister + `register`, {
       method: "POST",
       body: formData,
     })

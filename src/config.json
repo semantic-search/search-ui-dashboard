@@ -1,5 +1,14 @@
 {
+  "dashboard": "ws://52.188.166.61:7000/ws/151515",
   "baseUrl": "http://13.68.236.211:5000/",
-  "downloadUrl": "http://13.68.236.211:5000/",
-  "audioUrl": "http://52.188.166.61:8080/"
+  "faceRegister": "http://52.188.166.61:3000/",
+  "personSearchUrl": "http://52.188.166.61:3000/",
+  "faceSearch": "http://52.188.166.61:3000/",
+  "downloadUrl": "http://52.188.166.61:7000/download/",
+  "audioUrl": "http://52.188.166.61:8080/",
+  "imageSearch": "http://52.188.166.61:2181/",
+  "indexURL": "http://52.188.166.61:5000/",
+  "typesense": "http://52.188.166.61:6066/",
+  "elasticUrl": "http://52.188.166.61:8003/",
+  "indexFile": "http://52.188.166.61:5000/"
 }

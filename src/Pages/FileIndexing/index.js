@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useMutation } from "react-query";
 import DropImage from "../../components/DropImage";
 import Heading from "../../components/Heading";
-import { baseUrl } from "../../config.json";
+import { indexFile } from "../../config.json";
 
 const FileIndexing = () => {
   const [[fileType, uploadFile], setfileDetails] = useState([]);
@@ -10,7 +10,7 @@ const FileIndexing = () => {
   const [mutate, { isLoading, data }] = useMutation(({ uploadFile }) => {
     const formData = new FormData();
     formData.append("file", uploadFile);
-    return fetch(baseUrl + `index`, {
+    return fetch(indexFile + `index/file`, {
       method: "POST",
       body: formData,
     })
@@ -32,6 +32,7 @@ const FileIndexing = () => {
       <Heading title={"Index File"} />
       <DropImage setfileDetails={setfileDetails} />
       {isLoading && <div className="text-gray-400"> INDEXING.........</div>}
+      {data && data === true && <div className="text-green-500"> Done</div>}
       {console.log(isLoading, "loading")}
     </div>
   );

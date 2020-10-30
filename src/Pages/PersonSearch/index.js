@@ -3,7 +3,7 @@ import { useMutation } from "react-query";
 import Heading from "../../components/Heading";
 import ImageGrid from "../../components/ImageGrid";
 import Search from "../../components/Search";
-import { baseUrl } from "../../config.json";
+import { personSearchUrl } from "../../config.json";
 
 const PersonSearch = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -11,7 +11,7 @@ const PersonSearch = () => {
   const [mutate, { isLoading, data }] = useMutation(({ searchTerm }) => {
     const formData = new FormData();
     formData.append("user_name", searchTerm);
-    return fetch(baseUrl + `person_search`, {
+    return fetch(personSearchUrl + `person_search`, {
       method: "POST",
       body: formData,
     })

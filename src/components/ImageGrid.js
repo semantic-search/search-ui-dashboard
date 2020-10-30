@@ -1,6 +1,7 @@
 import React from "react";
 
 const ImageGrid = ({ data }) => {
+  console.log(data, "data", typeof data);
   return (
     <div className="grid gap-4 grid-cols-1 sm:grid-cols-3 mt-8 max-w-5xl pb-4 mx-4 mb-10">
       {/* <Image
@@ -14,7 +15,7 @@ const ImageGrid = ({ data }) => {
             key={idx}
             name={data.document[idx]}
             src={`data:image/png;base64, ${elem}`}
-            score={data.scores[idx]}
+            score={data.scores ? data.scores[idx] : null}
           />
         );
       })}

@@ -2,8 +2,7 @@ import React, { useCallback, useEffect, useState } from "react";
 import { useMutation } from "react-query";
 import Heading from "../../components/Heading";
 import ImageGrid from "../../components/ImageGrid";
-import Search from "../../components/Search";
-import { baseUrl } from "../../config.json";
+import { indexURL } from "../../config.json";
 
 const WebIndexing = () => {
   const [websites, setwebsites] = useState("");
@@ -11,7 +10,7 @@ const WebIndexing = () => {
   const [mutate, { isLoading, data }] = useMutation(({ websites }) => {
     const formData = new FormData();
     formData.append("urls", websites);
-    return fetch(baseUrl + `index/websites/`, {
+    return fetch(indexURL + `index/websites/`, {
       method: "POST",
       body: formData,
     })
@@ -49,7 +48,7 @@ const WebIndexing = () => {
         </button>
       </div>
       {isLoading && <div className="text-gray-400"> LOADING.........</div>}
-      <ImageGrid data={data} />
+      {data && data === true && <div className="text-green-500"> Done</div>}
     </div>
   );
 };

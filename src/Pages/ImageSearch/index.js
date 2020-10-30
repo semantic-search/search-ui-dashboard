@@ -4,7 +4,7 @@ import DropImage from "../../components/DropImage";
 import Heading from "../../components/Heading";
 import ImageGrid from "../../components/ImageGrid";
 import Pagination from "../../components/Pagination";
-import { baseUrl } from "../../config.json";
+import { imageSearch } from "../../config.json";
 
 const ImageSearch = () => {
   const [[fileType, uploadFile], setfileDetails] = useState([]);
@@ -13,7 +13,7 @@ const ImageSearch = () => {
   const [mutate, { isLoading, data }] = useMutation(({ uploadFile, page }) => {
     const formData = new FormData();
     formData.append("file", uploadFile);
-    return fetch(baseUrl + `face-search/?skip=${page}`, {
+    return fetch(imageSearch + `search/?skip=${page}`, {
       method: "POST",
       body: formData,
     })

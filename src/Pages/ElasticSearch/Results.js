@@ -7,7 +7,7 @@ const Results = ({ data }) => {
     <div className="w-2/3 my-6 mx-2 ">
       {data &&
         _.map(data, (key, val) => {
-          return <Result fileORurl={key} file_id={val} />;
+          return <Result fileORurl={key} file_name={val} />;
         })}
     </div>
   );
@@ -15,17 +15,17 @@ const Results = ({ data }) => {
 
 export default Results;
 
-const Result = ({ fileORurl, file_id }) => {
-  const isURL = validURL(fileORurl);
+const Result = ({ fileORurl, file_name }) => {
+  const isURL = validURL(file_name);
   return (
     <a
-      href={isURL ? fileORurl : `${downloadUrl}${file_id}`}
+      href={isURL ? file_name : `${downloadUrl}${fileORurl}`}
       target="_blank"
       rel="noopener noreferrer"
     >
       <div className="w-full mt-3">
         <div className="break-words bg-gray-900 font-semibold border-b-2 border-gray-400 py-2 px-4 text-xl text-blue-100">
-          {fileORurl}
+          {file_name}
         </div>
         {/* <div className="break-words bg-gray-800 py-2 px-4 text-lg text-blue-100">
           {console.log(mark_res)}

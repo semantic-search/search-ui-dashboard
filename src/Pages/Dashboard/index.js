@@ -6,10 +6,10 @@ import _ from "lodash";
 import Header from "./Header";
 import StatusBtn from "./StatusBtn";
 import TableParent from "./TableParent";
+import { dashboard } from "../../config.json";
+
 const Dashboard = () => {
-  const [socketUrl, setSocketUrl] = useState(
-    "ws://13.68.236.211:7000/ws/151515"
-  );
+  const [socketUrl, setSocketUrl] = useState(dashboard);
   const messageHistory = useRef([]);
 
   const {
